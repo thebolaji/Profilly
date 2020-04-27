@@ -1,0 +1,46 @@
+{{> loginL}}
+
+<div class="wrapper">
+
+    <div class="quote-wrapper">
+        <blockquote>
+            <p>
+                "Paradise isn't a place. <br>
+                It's a feeling"
+            </p>
+            <p class="author">- L. Boyer</p>
+        </blockquote>
+    </div> <!-- end quote-wrapper -->
+
+    <div class="form-wrapper" style="position: relative;">
+        <h1 class="form-title">Login</h1>
+
+        <form action="">
+            <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" name="email" id="email" class="w-100"
+                    value="info@chino.com">
+                <span class="check-icon"></span>
+            </div>
+
+            <div class="form-group mb-1">
+                <label for="password">Password</label>
+                <input type="password" name="password" id="password"
+                    class="w-100"
+                    title="Must contain at least one number and one uppercase
+                    and lowercase letter, and at least 8 or more characters"
+                    value="WeloveChino2">
+                <span class="check-icon"></span>
+            </div>
+            <br>
+            <div class="form-group mb-0">
+                <input type="submit" value="Login" class="w-100"
+                    id="submit">
+            </div>
+        </form>
+        <br>
+        <small>I dont have an account? <a href="/register">Click here</a>
+        </small>
+        <a href="/"><button style="width: 40%; padding: 10px; position: absolute; bottom:0; left:35%; color:white; background:#3FCCA9" >Go Home </button></a>
+    </div> <!-- end form-wrapper -->
+</div> <!-- end wrapper -->
