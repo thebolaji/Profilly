@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>form</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Engagement">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+    <link rel="stylesheet" href="/form/Footer-Basic.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+</head>
+
+<body style="background-color: rgb(117,112,255);">
+    <!-- Start: Navigation -->
+    <nav class="navbar navbar-light navbar-expand-md" style="background-color: #171837;">
+        <div class="container-fluid"><a class="navbar-brand" href="#" style="font-family: Engagement, cursive;font-size: 33px;color: rgba(255,255,255,0.9);"><strong>Profilly</strong></a><button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1" style="background-color: #ffffff;"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+            <div
+                class="collapse navbar-collapse" id="navcol-1">
+                <ul class="nav navbar-nav ml-auto">
+                    <li class="nav-item" role="presentation"></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link active text-uppercase" data-bs-hover-animate="pulse" href="#" style="color: rgba(255,255,255,0.9);font-size: 18px;font-family: Montserrat, sans-serif;background-color: rgb(117,112,255);"><strong>LOG OUT</strong></a></li>
+                </ul>
+        </div>
+        </div>
+    </nav>
+    <!-- End: Navigation -->
+    <div style="width: 100%;">
+        <form class="d-lg-flex flex-shrink-1 flex-fill justify-content-around align-content-around align-self-center align-items-lg-center" style="margin: 0px auto;margin-top: 18px;width: 92%;" action="/create" method="post" enctype="multipart/form-data">
+            <div class="form-row" style="margin: 0;margin-right: 30px;margin-left: 4px;width: 100%;">
+                <div class="form-group col-md-12"><label data-toggle="tooltip" data-bs-tooltip="" data-placement="right" title="the full name will be use for the profile page" style="font-family: Poppins, sans-serif;font-size: 17px;color: rgb(23,24,55);margin: 0;" for="firstname"><strong>Firstname</strong></label>
+                    <input
+                        class="shadow form-control" type="text" id="firstname" style="width: 100%;" name="name" placeholder="Yusuf" required="" minlength="2"></div>
+                <div class="form-group col-md-12"><label style="font-family: Poppins, sans-serif;font-size: 17px;color: rgb(23,24,55);" for="lastname"><strong>Lastname</strong></label><input class="shadow form-control" type="text" id="lastname" style="width: 100%;" name="lastname" placeholder="Bolaji"
+                        required="" minlength="4"></div>
+                <div class="form-group col-md-12"><label style="font-family: Poppins, sans-serif;font-size: 17px;color: rgb(23,24,55);margin: 0;" for="othername"><strong>Othername</strong></label><input class="shadow form-control" type="text" id="othername" style="width: 100%;" name="othername"
+                        placeholder="Waheed" required="" minlength="2"></div>
+                <div class="form-group col-md-12"><label class="border-success shadow-sm" style="font-family: Poppins, sans-serif;font-size: 17px;color: rgb(23,24,55);margin: 0;" for="othername"><strong>Occupation</strong><br></label><input class="shadow form-control" type="text" id="othername-1"
+                        style="width: 100%;" name="occupation" placeholder="Financial Analyst, Software Developer" inputmode="verbatim" required="" autofocus="" minlength="3"></div>
+                <div class="form-group col-md-6"><label data-toggle="tooltip" data-bs-tooltip="" data-placement="right" title="the full name will be use for the profile page" style="font-family: Poppins, sans-serif;font-size: 17px;color: rgb(23,24,55);margin: 0;" for="email"><strong>Email</strong><br></label>
+                    <input
+                        class="shadow form-control" type="email" data-toggle="tooltip" data-bs-tooltip="" id="email" name="email" multiple="" autofocus="" required="" title="You can enter multiple email wit &quot;, &quot;"></div>
+                <div class="form-group col-md-6"><label data-toggle="tooltip" data-bs-tooltip="" data-placement="right" title="the full name will be use for the profile page" style="font-family: Poppins, sans-serif;font-size: 17px;color: rgb(23,24,55);margin: 0;" for="phone"><strong>Phone No.</strong><br></label>
+                    <input
+                        class="shadow form-control" type="tel" data-toggle="tooltip" data-bs-tooltip="" id="phone" title="You can enter multiple number wit &quot;, &quot;" required=""></div>
+            </div>
+            <div class="d-lg-flex justify-content-lg-start align-items-lg-start form-row" style="margin: 0;margin-right: 0;margin-left: 30px;width: 100%;">
+                <div class="form-group col-md-12" style="margin: 0;padding: 0;"><label title="the full name will be use for the profile page" style="font-family: Poppins, sans-serif;font-size: 17px;color: rgb(23,24,55);margin: 0;" for="lastname"><strong>Write About you</strong><br></label><textarea class="shadow-lg form-control"
+                        cols="0" style="width: 100%;padding: 0;" rows="5" required="" minlength="200"></textarea></div>
+                <div class="form-group col-md-6" style="margin: 0;padding: 0;margin-top: 10px;"><label data-toggle="tooltip" data-bs-tooltip="" style="font-family: Poppins, sans-serif;font-size: 17px;color: rgb(23,24,55);margin: 0;margin-top: 13px;" for="image" title="Image must be large to fit properly"><strong>Upload&nbsp; profile picture</strong><br></label>
+                    <input
+                        type="file" id="image" name="image" required="" accept="image/*"></div>
+                <div class="form-group col-md-6" style="margin: 0;padding: 0;margin-top: 10px;"><label data-toggle="tooltip" data-bs-tooltip="" style="font-family: Poppins, sans-serif;font-size: 17px;color: rgb(23,24,55);margin: 0;margin-top: 13px;" for="image" title="Image must be large to fit properly"><strong>Upload&nbsp;Resume /CV</strong><br></label>
+                    <input
+                        type="file" id="image" name="image" required=""></div>
+                <div class="form-group col-md-6" data-toggle="tooltip" data-bs-tooltip="" data-placement="bottom" style="margin-top: 15px;" title="input facebook profile link "><label data-toggle="tooltip" data-bs-tooltip="" data-placement="right" title="the full name will be use for the profile page" style="font-family: Poppins, sans-serif;font-size: 17px;color: rgb(23,24,55);margin: 0;" for="facebook"><strong>Facebook link</strong><br></label>
+                    <input
+                        class="shadow form-control" type="text" id="facebook" style="width: 100%;" inputmode="verbatim" required="" autofocus="" minlength="3"></div>
+                <div class="form-group col-md-6" style="margin-top: 15px;"><label data-toggle="tooltip" data-bs-tooltip="" data-placement="right" title="input Linkedin profile link" style="font-family: Poppins, sans-serif;font-size: 17px;color: rgb(23,24,55);margin: 0;" for="linkedin"><strong>Linkedin link</strong><br></label>
+                    <input
+                        class="shadow form-control" type="text" id="linkedin" style="width: 100%;" inputmode="verbatim" required="" autofocus="" minlength="3" name="linkedin"></div>
+                <div class="form-group col-md-6" style="margin-top: 0px;"><label data-toggle="tooltip" data-bs-tooltip="" data-placement="right" title="the full name will be use for the profile page" style="font-family: Poppins, sans-serif;font-size: 17px;color: rgb(23,24,55);margin: 0;" for="twitter"><strong>Twitter link</strong><br></label>
+                    <input
+                        class="shadow form-control" type="text" id="twitter" style="width: 100%;" inputmode="verbatim" required="" autofocus="" minlength="3"></div>
+                <div class="form-group col-md-6" style="margin-top: 0px;"><label data-toggle="tooltip" data-bs-tooltip="" data-placement="right" title="the full name will be use for the profile page" style="font-family: Poppins, sans-serif;font-size: 17px;color: rgb(23,24,55);margin: 0;" for="phone"><strong>other link</strong><br></label>
+                    <input
+                        class="shadow form-control" type="text" id="otherslink" style="width: 100%;" inputmode="verbatim" required="" autofocus="" minlength="3" name="other"></div><button class="btn btn-primary btn-lg" type="submit" style="margin-right: 0px;margin-left: 0;background-color: rgb(23,24,55);">Save</button><button class="btn btn-primary btn-lg d-lg-flex justify-content-lg-center align-items-lg-center"
+                    type="submit" style="margin-right: 0px;margin-left: 12px;background-color: rgb(0,221,221);">Submit</button><button class="btn btn-primary btn-lg d-lg-flex justify-content-lg-center align-items-lg-center" type="submit" style="margin-right: 0px;margin-left: 12px;background-color: rgb(0,221,221);">Laucnh page</button></div>
+        </form>
+    </div>
+    <!-- Start: Footer Basic -->
+    <div class="footer-basic" style="margin-top: 44px;background-color: rgb(23,24,55);">
+        <footer>
+            <!-- Start: Social Icons -->
+            <div class="social" style="height: 50px;"><a href="https://github.com/BigB97" style="color: rgb(255,255,255);"><i class="icon ion-social-github" style="color: rgb(255,255,255);"></i></a><a href="https://twitter.com/Official_BiggB?s=09" style="color: white;"><i class="icon ion-social-twitter"></i></a>
+                <a
+                    href="https://www.facebook.com/bronzebeez" style="color: white;"><i class="icon ion-social-facebook"></i></a>
+            </div>
+            <!-- End: Social Icons -->
+            <!-- Start: Copyright -->
+            <p class="copyright" style="font-size: 22px;">BigB © 2020</p>
+            <!-- End: Copyright -->
+        </footer>
+    </div>
+    <!-- End: Footer Basic -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+    <script src="/form/bs-init.js"></script>
+</body>
+
+</html>

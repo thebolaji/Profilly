@@ -8,8 +8,8 @@ var indexRouter = require('./routes/index');
 var mongoose = require('mongoose');
 var usersRouter = require('./routes/users');
 let PORT = process.env.PORT || 3000;
-var app = express();
 const dotenv = require('dotenv').config()
+var app = express();
 
 // view engine setup
 // app.set('views', path.join(__dirname, 'views'));

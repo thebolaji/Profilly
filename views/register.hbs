@@ -13,21 +13,22 @@
     </div> <!-- end quote-wrapper -->
 
     <div class="form-wrapper" style="position: relative;">
-        <h1 class="form-title">Sign up</h1>
-
-        <form action="/users/register" method="POST">
+        <h1 class="form-title" >Sign up</h1>
+<div style="color: white; margin-bottom:25px">
+<h4 style="color: white; margin:0px">{{msg}}</h4>
+</div>
+        <form action="/users/register" method="POST" style="margin-top:20px;">
             <div class="form-group">
                 <label for="username">Fullame</label>
                 <input type="text" name="name" id="name" class="w-100"
-                    autofocus value=""
+                    value="{{name}}"
                     title="Must be longer than 4 characters">
-                <span class="check-icon"></span>
             </div>
 
             <div class="form-group">
                 <label for="email">Email Address</label>
                 <input type="email" name="email" id="email" class="w-100"
-                    value="">
+                    value="{{email}}">
                 <span class="check-icon"></span>
             </div>
 
@@ -37,7 +38,7 @@
                     class="w-100"
                     title="Must contain at least one number and one uppercase
                     and lowercase letter, and at least 8 or more characters"
-                    value="">
+                    {{!-- value=""> --}}
                 <span class="check-icon"></span>
             </div>
             <br>
@@ -47,7 +48,7 @@
             </div>
         </form>
 
-        <small>Have an account? <a href="/login">Click here</a>
+        <small>Have an account? <a href="/users/login">Click here</a>
         </small>
         <a href="/"><button style="width: 40%; padding: 10px; position: absolute; bottom:0; left:35%; color:white; background:#3FCCA9" >Go Home </button></a>
 
