@@ -1,5 +1,6 @@
 var createError = require('http-errors');
 var express = require('express');
+var app = express();
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
@@ -7,13 +8,18 @@ var exphbs = require('express-handlebars');
 var indexRouter = require('./routes/index');
 var mongoose = require('mongoose');
 var usersRouter = require('./routes/users');
-let PORT = process.env.PORT || 3000;
+let PORT = 3000;
 const dotenv = require('dotenv').config()
-var app = express();
+    // const passport = require('passport')
+const session = require('express-session');
+const MongoStore = require('connect-mongo')(session);
+const flash = require('connect-flash');
 
-// view engine setup
-// app.set('views', path.join(__dirname, 'views'));
-// app.set('view engine', 'hbs');
+// Database
+mongoose.connect(process.env.DB_CONNECT, { useNewUrlParser: true, useUnifiedTopology: true })
+    .then(() => { console.log('Database Connected.....') })
+    .catch((err) => { console.log(err) })
+
 app.engine('.hbs', exphbs({
     defaultLayout: 'layout',
     layoutsDir: __dirname + '/views/layouts',
@@ -21,16 +27,31 @@ app.engine('.hbs', exphbs({
 }));
 app.set('view engine', '.hbs');
 
+
+//Start Middlewares
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-// Database
-mongoose.connect(process.env.DB_CONNECT, { useNewUrlParser: true, useUnifiedTopology: true })
-    .then(() => { console.log('Database Connected.....') })
-    .catch((err) => { console.log(err) })
+// Session
+//Mongo-session connect
+app.use(session({
+    secret: process.env.DB_TOKEN,
+    store: new MongoStore({ mongooseConnection: mongoose.connection }),
+    saveUninitialized: true,
+    resave: true,
+    cookie: {
+        maxAge: 86400000
+    }
+}));
+
+//Message Flash
+app.use(flash());
+
+
+//End of Middleware
 
 //Routes
 app.use('/', indexRouter);

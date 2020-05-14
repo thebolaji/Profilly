@@ -1,11 +1,10 @@
-// const route = require('../routes/index');
+const route = require('../routes/index');
 const User = require('../model/User')
+const Profile = require('../model/Profile')
 const Joi = require('@hapi/joi');
 const { RegValidation, LogValidation } = require('../Validation')
 const bcrypt = require('bcryptjs');
-var jwt = require('jsonwebtoken');
-
-
+// var jwt = require('jsonwebtoken');
 
 
 module.exports = {
@@ -13,8 +12,6 @@ module.exports = {
         res.render('home', { title: 'Profilly' });
     },
     RegPage: (req, res) => {
-        var token = req.headers.auth - token;
-        if (token) return res.redirect('/create');
         res.render('register', {
             style: 'register.css',
             title: 'Register'
@@ -63,41 +60,52 @@ module.exports = {
             console.log(error);
         }
     },
-
+    creatProf: (req, res) => {
+        const profile = new Profile(req.body)
+        res.send(profile)
+            // post.save().then((posts) => {
+            //     console.log(post);
+            //     res.send(post)
+            // }).catch((error) => {
+            //     console.log(error)
+            // })
+    },
     LogForm: async(req, res) => {
-        // //Validate Form
-        const { error } = LogValidation(req.body);
-        if (error) {
-            return res.render('login', {
-                msg: error.detail[0].message,
+        try {
+            // //Validate Form
+            const { error } = LogValidation(req.body);
+            if (error) {
+                return res.render('login', {
+                    msg: error.details[0].message,
+                    style: 'login.css',
+                    title: 'Login'
+                })
+            }
+
+            //Check form in DataBase
+            const user = await User.findOne({ email: req.body.email });
+            if (!user) return res.render('login', {
+                msg: 'No Email on our Database',
                 style: 'login.css',
-                title: 'Login'
-            })
+                title: 'Login',
+            });
+
+            // Check if password === true
+            const validPass = await bcrypt.compare(req.body.password, user.password)
+            if (!validPass) return res.render('login', { msg: 'Invalid password' })
+            req.session.userId = user._id
+            res.redirect('/users/create')
+        } catch (error) {
+            console.log(error)
         }
-
-        //Check form in DataBase
-        const user = await User.findOne({ email: req.body.email });
-        if (!user) return res.render('login', {
-            msg: 'No Email on our Database',
-            style: 'login.css',
-            title: 'Login',
-        });
-
-        // Check if password === true
-        const validPass = await bcrypt.compare(req.body.password, user.password)
-        if (!validPass) return res.render('login', { msg: 'Invalid password' })
-
-
-        //Ceate tokken
-        const token = jwt.sign({ _id: user._id }, process.env.DB_TOKEN, {
-            expiresIn: 86400 // expires in 24 hours
-        });
-        // res.header('auth-token', token)
-        res.render('create');
-        console.log(token);
-
     },
     CreatePage: (req, res) => {
+        // console.log(req.session);
         res.render('create')
+    },
+    logout: (req, res) => {
+        req.session.destroy(() => {
+            res.redirect('/');
+        })
     }
 }
