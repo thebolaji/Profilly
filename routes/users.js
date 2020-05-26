@@ -12,6 +12,7 @@ router.get("/create", verify, go.CreatePage);
 router.get("/edit", verify, go.editPage);
 router.get("/:slug", verify, go.Preview);
 router.delete("/:id", verify, go.deletePage);
+router.get("/edit/:id", verify, go.editPage);
 
 // router.get("/edit-profile", verify, go.editProfile);
 
@@ -20,6 +21,6 @@ router.delete("/:id", verify, go.deletePage);
 router.post("/register", go.RegForm);
 router.post("/login", go.LogForm);
 router.post("/create", go.creatProf);
-router.post("/edit/:id", go.update);
+router.put("/edit/:id", go.updatePage);
 
 module.exports = router;

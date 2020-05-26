@@ -45,8 +45,9 @@
     <div style="width: 100%;">
         <form
             class="d-lg-flex flex-shrink-1 flex-fill justify-content-around align-content-around align-self-center align-items-lg-center"
-            style="margin: 0px auto; margin-top: 18px; width: 92%;" action="/users/create" method="post">
-            <input type="hidden" name="_id" value="{{id}}">
+            style="margin: 0px auto; margin-top: 18px; width: 92%;" action="/users/{{profiles.id}}?_method=PUT"
+            method="PUT">
+            {{!-- <input type="hidden" name="_id" value="{{profiles.id}}"> --}}
             <div class="form-row" style="margin: 0; margin-right: 30px; margin-left: 4px; width: 100%;">
                 <div class="form-group col-md-12">
                     <label data-toggle="tooltip" data-bs-tooltip="" data-placement="right"
@@ -57,7 +58,7 @@
                 margin: 0;
               " for="firstname"><strong>Firstname</strong></label>
                     <input class="shadow form-control" type="text" id="firstname" style="width: 100%;" name="name"
-                        placeholder="Yusuf" required="" minlength="2" value="{{name}}" />
+                        placeholder="Yusuf" required="" minlength="2" value="{{profiles.name}}" />
                 </div>
                 <div class="form-group col-md-12">
                     <label style="
@@ -66,7 +67,7 @@
                 color: rgb(23, 24, 55);
               " for="lastname"><strong>Lastname</strong></label><input class="shadow form-control" type="text"
                         id="lastname" style="width: 100%;" name="lastname" placeholder="Bolaji" required=""
-                        minlength="4" value="{{lastname}}" />
+                        minlength="4" value="{{profiles.lastname}}" />
                 </div>
                 <div class="form-group col-md-12">
                     <label style="
@@ -75,8 +76,8 @@
                 color: rgb(23, 24, 55);
                 margin: 0;
               " for="othername"><strong>Othername</strong></label><input class="shadow form-control" type="text"
-                        id="othername" style="width: 100%;" name="othername" placeholder="Waheed" value="{{othername}}"
-                        required="" minlength="2" />
+                        id="othername" style="width: 100%;" name="othername" placeholder="Waheed"
+                        value="{{profiles.othername}}" required="" minlength="2" />
                 </div>
                 <div class="form-group col-md-12">
                     <label class="border-success shadow-sm" style="
@@ -87,7 +88,7 @@
               " for="othername"><strong>Occupation</strong><br /></label><input class="shadow form-control" type="text"
                         id="othername-1" style="width: 100%;" name="occupation"
                         placeholder="Financial Analyst, Software Developer" inputmode="verbatim" required=""
-                        autofocus="" minlength="3" value="{{occupation}}" />
+                        autofocus="" minlength="3" value="{{profiles.occupation}}" />
                 </div>
                 <div class="form-group col-md-6">
                     <label data-toggle="tooltip" data-bs-tooltip="" data-placement="right"
@@ -99,7 +100,7 @@
               " for="email"><strong>Email</strong><br /></label>
                     <input class="shadow form-control" type="email" data-toggle="tooltip" data-bs-tooltip="" id="email"
                         name="email" multiple="" autofocus="" required="" title='You can enter multiple email with ", "'
-                        value="{{email}}" />
+                        value="{{profiles.email}}" />
                 </div>
                 <div class="form-group col-md-6">
                     <label data-toggle="tooltip" data-bs-tooltip="" data-placement="right"
@@ -110,7 +111,8 @@
                 margin: 0;
               " for="phone"><strong>Phone No.</strong><br /></label>
                     <input class="shadow form-control" type="tel" data-toggle="tooltip" data-bs-tooltip="" id="phone"
-                        title='You can enter multiple number wit ", "' required="" name="phone" value="{{phone}}" />
+                        title='You can enter multiple number wit ", "' required="" name="phone"
+                        value="{{profiles.phone}}" />
                 </div>
             </div>
             <div class="d-lg-flex justify-content-lg-start align-items-lg-start form-row"
@@ -123,7 +125,7 @@
                 margin: 0;
               " for="about"><strong>Write About you</strong><br /></label><textarea class="shadow-lg form-control"
                         cols="0" style="width: 100%; padding: 0;" rows="5" name="about" required=""
-                        minlength="100">{{about}}</textarea>
+                        minlength="100">{{profiles.about}}</textarea>
                 </div>
                 <div class="form-group col-md-6" data-toggle="tooltip" data-bs-tooltip="" data-placement="bottom"
                     style="margin-top: 15px;" title="input facebook profile link ">
@@ -136,7 +138,7 @@
               " for="facebook"><strong>Facebook link</strong><br /></label>
                     <input class="shadow form-control" type="text" id="facebook" style="width: 100%;"
                         inputmode="verbatim" required="" autofocus="" minlength="3" name="facebook"
-                        value="{{facebook}}" />
+                        value="{{profiles.facebook}}" />
                 </div>
                 <div class="form-group col-md-6" style="margin-top: 15px;">
                     <label data-toggle="tooltip" data-bs-tooltip="" data-placement="right"
@@ -148,7 +150,7 @@
               " for="linkedin"><strong>Linkedin link</strong><br /></label>
                     <input class="shadow form-control" type="text" id="linkedin" style="width: 100%;"
                         inputmode="verbatim" required="" autofocus="" minlength="3" name="linkedin"
-                        value="{{linkedin}}" />
+                        value="{{profiles.linkedin}}" />
                 </div>
                 <div class="form-group col-md-6" style="margin-top: 0px;">
                     <label data-toggle="tooltip" data-bs-tooltip="" data-placement="right"
@@ -160,7 +162,7 @@
               " for="twitter"><strong>Twitter link</strong><br /></label>
                     <input class="shadow form-control" type="text" id="twitter" style="width: 100%;"
                         inputmode="verbatim" required="" autofocus="" minlength="3" name="twitter"
-                        value="{{twitter}}" />
+                        value="{{profiles.twitter}}" />
                 </div>
                 <div class="form-group col-md-6" style="margin-top: 0px;">
                     <label data-toggle="tooltip" data-bs-tooltip="" data-placement="right"
@@ -171,7 +173,8 @@
                 margin: 0;
               " for="phone"><strong>other link</strong><br /></label>
                     <input class="shadow form-control" type="text" id="otherslink" style="width: 100%;"
-                        inputmode="verbatim" required="" autofocus="" minlength="3" name="other" value="{{other}}" />
+                        inputmode="verbatim" required="" autofocus="" minlength="3" name="other"
+                        value="{{profiles.other}}" />
                 </div>
                 <div class="form-group col-md-6" style="margin: 0;padding: 0;margin-bottom: 0px;"><label
                         data-toggle="tooltip"

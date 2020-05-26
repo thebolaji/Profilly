@@ -79,6 +79,7 @@ module.exports = {
       res.redirect(`/users/${profile.slug}`);
     } catch (error) {
       console.log(error);
+      res.redirect(`/users/create`);
     }
   },
   LogForm: async (req, res) => {
@@ -118,10 +119,6 @@ module.exports = {
     req.session.destroy(() => {
       res.redirect("/");
     });
-  },
-  editPage: (req, res) => {
-    res.render("create2");
-    console.log(req.body);
   },
   update: (res, req) => {
     const profile = Profile.findOneAndUpdate(
@@ -167,7 +164,7 @@ module.exports = {
       other: profile.other,
       id: profile._id,
     };
-    console.log("profiles: ", profiles);
+    // console.log("profiles: ", profiles);
     try {
       res.render("create2", { profiles });
     } catch (error) {
@@ -177,5 +174,50 @@ module.exports = {
   deletePage: async (req, res) => {
     await Profile.findByIdAndDelete(req.params.id);
     res.redirect("/users/create");
+  },
+  editPage: async (req, res) => {
+    let profile = await Profile.findById(req.params.id);
+    profiles = {
+      name: profile.name,
+      lastname: profile.lastname,
+      othername: profile.othername,
+      occupation: profile.occupation,
+      email: profile.email,
+      phone: profile.phone,
+      about: profile.about,
+      facebook: profile.facebook,
+      linkedin: profile.linkedin,
+      twitter: profile.twitter,
+      other: profile.other,
+      id: profile._id,
+    };
+    // console.log("profiles: ", profiles);
+    try {
+      res.render("edit", { profiles });
+    } catch (error) {
+      console.log("error: ", error);
+    }
+  },
+  updatePage: async (req, res) => {
+    let profiles = await Profile.findById(req.params.id);
+    let profile = req.profiles;
+    profile.name = req.body.name;
+    profile.lastname = req.body.lastname;
+    profile.othername = req.body.othername;
+    profile.occupation = req.body.occupation;
+    profile.email = req.body.email;
+    profile.phone = req.body.phone;
+    profile.about = req.body.about;
+    profile.facebook = req.body.facebook;
+    profile.linkedin = req.body.linkedin;
+    profile.twitter = req.body.twitter;
+    profile.other = req.body.other;
+    try {
+      profile = await profile.save();
+      console.log(profile.id);
+      res.redirect(`/users/${profile.slug}`);
+    } catch (error) {
+      res.redirect(`/users/edit`);
+    }
   },
 };
