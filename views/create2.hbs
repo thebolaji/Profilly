@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,
+            shrink-to-fit=no" />
+    <title>form</title>
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Engagement" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css" />
+    <link rel="stylesheet" href="/form/Footer-Basic.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" />
+</head>
+
+<body style="background-color: rgb(117, 112, 255);">
+    <nav class="navbar navbar-light navbar-expand-md" style="background-color: #171837;">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#" style="
+            font-family: Engagement, cursive;
+            font-size: 33px;
+            color: rgba(255, 255, 255, 0.9);
+          "><strong>Profilly</strong></a><button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"
+                style="background-color: #ffffff;">
+                <span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navcol-1">
+                <ul class="nav navbar-nav ml-auto">
+                    <li class="nav-item" role="presentation"></li>
+                    <li class="nav-item" role="presentation">
+                        <a class="nav-link active text-uppercase" data-bs-hover-animate="pulse" href="/logout" style="
+                  color: rgba(255, 255, 255, 0.9);
+                  font-size: 18px;
+                  font-family: Montserrat, sans-serif;
+                  background-color: rgb(117, 112, 255);
+                "><strong>LOG OUT</strong></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div style="margin-top: 26px;">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <div>
+                        <h1 style="font-size: 15px;margin-bottom: 0px;font-style: italic;line-height: 24px;">Firstname
+                        </h1>
+                        <p
+                            style="font-family: Poppins, sans-serif;font-weight: bold;color: rgb(255,255,255);font-size: 17px;">
+                            {{profiles.name}}</p>
+                    </div>
+                    <div>
+                        <h1 style="font-size: 15px;margin-bottom: 0px;font-style: italic;line-height: 24px;">Lastname
+                        </h1>
+                        <p
+                            style="font-family: Poppins, sans-serif;font-weight: bold;color: rgb(255,255,255);font-size: 17px;">
+                            {{profiles.lastname}}</p>
+                    </div>
+                    <div>
+                        <h1 style="font-size: 15px;margin-bottom: 0px;font-style: italic;line-height: 24px;">Othername
+                        </h1>
+                        <p
+                            style="font-family: Poppins, sans-serif;font-weight: bold;color: rgb(255,255,255);font-size: 17px;">
+                            {{profiles.othername}}</p>
+                    </div>
+                    <div>
+                        <h1 style="font-size: 15px;margin-bottom: 0px;font-style: italic;line-height: 24px;">Occupation
+                        </h1>
+                        <p
+                            style="font-family: Poppins, sans-serif;font-weight: bold;color: rgb(255,255,255);font-size: 17px;">
+                            {{profiles.occupation}}</p>
+                    </div>
+                    <div>
+                        <h1 style="font-size: 15px;margin-bottom: 0px;font-style: italic;line-height: 24px;">Email</h1>
+                        <p
+                            style="font-family: Poppins, sans-serif;font-weight: bold;color: rgb(255,255,255);font-size: 17px;">
+                            {{profiles.email}}</p>
+                    </div>
+                    <div>
+                        <h1 style="font-size: 15px;margin-bottom: 0px;font-style: italic;line-height: 24px;">Phone
+                        </h1>
+                        <p
+                            style="font-family: Poppins, sans-serif;font-weight: bold;color: rgb(255,255,255);font-size: 17px;">
+                            {{profiles.phone}}</p>
+                    </div>
+                    <div>
+                        <h1 style="font-size: 15px;margin-bottom: 0px;font-style: italic;line-height: 24px;">Socials
+                        </h1>
+                        <div style="padding-top: 25px;"><a class="d-flex" href="{{profiles.facebook}}" target="_blank"
+                                style="font-size: 17px;"><i class="icon ion-social-facebook"
+                                    style="width: 17px;color: rgb(0,221,221);height: 33px;font-size: 23px;"></i>
+                                <p
+                                    style="font-family: Poppins, sans-serif;font-weight: bold;color: rgb(255,255,255);height: 38px;margin: 0;padding: 0;">
+                                    {{profiles.facebook}}</p>
+                            </a>
+                        </div>
+                        <div style="padding-top: 25px;"><a class="d-flex" href="{{profiles.twitter}}" target="_blank"><i
+                                    class="icon ion-social-twitter"
+                                    style="width: 25px;color: rgb(0,221,221);height: 33px;font-size: 23px;"></i>
+                                <p
+                                    style="font-family: Poppins, sans-serif;font-weight: bold;color: rgb(255,255,255);height: 38px;margin: 0;padding: 0;font-size: 17px;">
+                                    {{profiles.twitter}} </p>
+                            </a></div>
+                        <div style="padding-top: 25px;"><a class="d-flex" href="{{profiles.linkedin}}"
+                                target="_blank"><i class="icon ion-social-linkedin"
+                                    style="width: 26px;  margin-top: 12px !important; color: rgb(0,221,221);height: 33px;font-size: 23px;"></i>
+                                <p
+                                    style="font-family: Poppins, sans-serif;font-weight: bold;color: rgb(255,255,255);height: 38px;margin: 0;padding: 0;font-size: 17px;">
+                                    {{profiles.linkedin}}</p>
+                            </a></div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div
+                        style="background-color: rgba(255,255,255,0);border-radius: 50%;text-align: center;margin-bottom: 21px;">
+                        <div
+                            style="background-color: #ffffff;border-radius: 50%;height: 131px;width: 136px;margin-left: 16px;background-image: url(&quot;/assets/img/man-wearing-white-dress-shirt-and-black-blazer-2182970.jpg&quot;);background-position: center;background-size: cover;background-repeat: no-repeat;">
+                        </div>
+                    </div>
+                    <div style="width: 100%;">
+                        <h1 style="font-size: 15px;margin-bottom: 0px;font-style: italic;line-height: 24px;">About You
+                        </h1>
+                        <p
+                            style="font-family: Poppins, sans-serif;font-weight: bold;color: rgb(255,255,255);font-size: 17px;">
+                            {{profiles.about}}</p>
+                    </div>
+                    <a href="/users/edit-profile" class="btn btn-primary btn-lg" role="button"
+                        style="width: 86px;margin-right: 18px;background-color: rgb(23,24,55);color: rgb(255,255,255);">Edit</a>
+                    {{!-- <a href="/users/edit-profile" class="btn btn-primary btn-lg" role="button">Rest</a> --}}
+                    <a class="btn btn-primary btn-lg" role="button"
+                        style="width: 168px;background-color: rgb(0,221,221);">Launch profile</a>
+                    <form class="d-inline" action="/users/{{profiles.id}}?_method=DELETE" method="POST">
+                        <button
+                            style="width: 168px!important; margin-right: 18px !important; color: rgb(255,255,255) !important; background-color: rgb(23,24,55) !important;"
+                            class="btn" type="submit">Reset
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Start: Footer Basic -->
+    <div class="footer-basic" style="
+        margin-top: 44px;
+        background-color: rgb(23, 24, 55);
+      {{!--   position: fixed;
+        bottom: 0;
+        width: 100%; --}}
+      ">
+        <footer>
+            <!-- Start: Social Icons -->
+            <div class="social" style="height: 50px;">
+                <a href="https://github.com/BigB97" style="color: rgb(255, 255, 255);"><i class="icon ion-social-github"
+                        style="color: rgb(255, 255, 255);"></i></a><a href="https://twitter.com/Official_BiggB?s=09"
+                    style="color: white;"><i class="icon ion-social-twitter"></i></a>
+                <a href="https://www.facebook.com/bronzebeez" style="color: white;"><i
+                        class="icon ion-social-facebook"></i></a>
+            </div>
+            <!-- End: Social Icons -->
+            <!-- Start: Copyright -->
+            <p class="copyright" style="font-size: 22px;">BigB © 2020</p>
+            <!-- End: Copyright -->
+        </footer>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+    <script src="/assets/js/script.min.js"></script>
+</body>
+
+</html>

@@ -46,6 +46,7 @@
         <form
             class="d-lg-flex flex-shrink-1 flex-fill justify-content-around align-content-around align-self-center align-items-lg-center"
             style="margin: 0px auto; margin-top: 18px; width: 92%;" action="/users/create" method="post">
+            <input type="hidden" name="_id" value="{{id}}">
             <div class="form-row" style="margin: 0; margin-right: 30px; margin-left: 4px; width: 100%;">
                 <div class="form-group col-md-12">
                     <label data-toggle="tooltip" data-bs-tooltip="" data-placement="right"
@@ -191,8 +192,10 @@
             ">
                     Save
                 </button>
-                <a class="btn btn-primary btn-lg d-lg-flex justify-content-lg-center align-items-lg-center"
-                    role="button" style="margin-right: 0px;margin-left: 12px;background-color: rgb(0,221,221);">Next</a>
+                <a href="/profile"
+                    class="btn btn-primary btn-lg d-lg-flex justify-content-lg-center align-items-lg-center"
+                    role="button" style="margin-right: 0px;margin-left: 12px;background-color: rgb(0,221,221);">Launch
+                    Profile</a>
             </div>
         </form>
     </div>
